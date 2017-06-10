@@ -1,0 +1,262 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    color: #000;
+    font-family:Monospace;
+    font-size:13px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.flexHrien{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */ 
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; 
+    align-items:center;
+    -webkit-align-items:center;
+    box-align:center;
+    -moz-box-align:center;
+    -webkit-box-align:center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+}
+#loader{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+     background: url(../images/loading_bg.jpg) no-repeat center center;
+     background-size: 100% 100%;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#proBox{
+}
+#progress{
+    height: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    width:62%;
+    overflow: auto;
+    margin: 5% auto 0;
+}
+#progress-bar{
+    border-radius: 12px;
+    height:12px;
+    width:0%;
+   // margin: 0 auto;
+    background:#fff;
+}
+#pic{
+    width: 18.6%;
+    margin: 48% 20% 42%;
+}
+#pic img{
+    width: 100%;
+}
+#loader #processText{
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    margin-top: 3%;
+}
+.world{
+    position: absolute;
+    z-index:-1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation: light 5s infinite;
+    background-image: linear-gradient(to top, #a1c4fd 0%, #c2e9fb 33%, #ebbba7 66%, #cfc7f8 100%);
+    background-size: 400%;
+    background-position: 0% 100%;
+    animation: move 60s infinite;
+}
+@keyframes move{
+    0%
+        {background-position: 0% 100%;}
+    50%
+        {background-position: 100% 0%;}
+    100%
+        {background-position: 0% 100%;}
+}
+@-webkit-keyframes move{
+    0%
+        {background-position: 0% 100%;}
+    50%
+        {background-position: 100% 0%;}
+    100%
+        {background-position: 0% 100%;}
+}
+#buttom {
+    text-align:center;
+    position: absolute;
+    width: 96%;
+    padding: 2%;
+    z-index:100;
+}
+#buttom a {
+    margin:0,20px;
+    color: #ff5346;
+    font-size:24px;
+}
+#track{
+    font-size:24px;
+    color: #ff5346;
+    display: none;
+}
+#home img{
+    width: 100%;
+
+}
+#home{
+    width:100%; 
+    height:100%; 
+    background:rgba(6,18,40,0.8);
+    flex-direction: column;			
+    position:fixed; 
+    z-index:0;
+}
+#game-start{
+    width:100%; 		
+    text-align:center;
+    margin: 65% auto 0;
+}
+#game-start #topPic{
+    width: 51.6%;
+    margin: 0 auto;
+}
+#game-start #btn_start{
+    display: inline-block;
+    width: 42%;
+    margin-left: 5%;
+    margin-top: 15%
+}
+@media screen and (min-width: 900px){
+
+    #buttom a {
+        visibility:visible;
+    }
+}
+
+@media screen and (max-width: 750px){
+    #buttom a {
+        visibility:hidden;
+    }
+}
+
+#allScore{
+    width: 40%;
+    position: absolute;
+    top: 2%;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+}
+#allScore .imgs{
+    width: 60%;
+    display: inline-block
+}
+#allScore #scoreBox{
+    color: #fdd448;
+    font-size:45px;
+    display: inline-block;
+    width: 35%;
+    font-weight: bold;
+    float: right;
+    margin-top: -7%;
+    font-family: '微软雅黑';
+}
+#endpage-bg{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: none;
+    background: #570fa3;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#endpage-bg img{
+    width: 100%;
+    display: block;
+}
+#endpage-content{
+    width:100%;
+    overflow: auto;
+    margin: 104% 0 0;
+    position: absolute; 
+    left: 0;
+    right: 0;
+    top: 0;
+    text-align:center;
+    
+}
+#gameAgain{
+    display: inline-block;
+    width: 19%;
+}
+#endpage-content .btns{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+#endpage-content .btns span{
+    display: inline-block;
+    width: 40%;
+}
+#endpage-content .btns span a{
+    display: block;
+}
+#shareBox{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+#shareBox .picArror img{
+    width: 100%;
+}
+#shareBox .picArror{
+    width: 45%;
+    position: absolute;
+    top: 5%;
+    right: 8%;
+}
+.slowShow{
+    -webkit-animation: slowshow 1s linear;
+    animation: slowshow 1s linear;
+}
+
+@keyframes slowshow{
+0%
+    {opacity: 0;}
+50%
+    {opacity: .5;}
+100%
+    {opacity: 1;}
+}
+@-webkit-keyframes slowshow{
+0%
+    {opacity: 0;}
+50%
+    {opacity: .5;}
+100%
+    {opacity: 1;}
+}
