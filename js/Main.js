@@ -227,9 +227,8 @@ function createWater(){
 function creatcoin(){			
 	var coinloader = new THREE.JSONLoader();
 	coinloader.load( 'models/coin/coin.js', function (geometry,materials) {
-		materials.forEach(function(material) {
-		material.side = THREE.DoubleSide;
-	});
+	var coinmaterial = materials[0];
+	coinmaterial.side = THREE.DoubleSide; 
 	var mat=new THREE.MultiMaterial(materials);
 	var nBlocs=100;
 	var Pn=[];
@@ -249,7 +248,7 @@ function creatcoin(){
 		if(i%11==0){i=i+2;}
 	}
 	});
-	var gifttexture = new THREE.TextureLoader().load( 'images/hongbao.png' ); 
+	var gifttexture = new THREE.TextureLoader().load( 'images/hongbao-min.png' ); 
 	for(var j=13;j<100;j+=22){
 		var gift = new THREE.Sprite(
 		new THREE.SpriteMaterial({
@@ -282,10 +281,7 @@ function loadbg(){
 		for (let i = 0; i < bgmodel.children.length; i++) {
 		  if (bgmodel.children[i].material) {
 			if (bgmodel.children[i].material.materials) {
-			  bgmodel.children[i].material.materials.forEach((mat) => {
-				mat.side = THREE.DoubleSide;
-				 
-			  });
+			  bgmodel.children[i].material.materials[0].side = THREE.DoubleSide;
 			}
 			else {
 			  bgmodel.children[i].material.side = THREE.DoubleSide;
@@ -306,9 +302,8 @@ function createPlane(){
 		for (let i = 0; i < plane.children.length; i++) {
 		  if (plane.children[i].material) {
 			if (plane.children[i].material.materials) {
-			  plane.children[i].material.materials.forEach((mat) => {
-				mat.side = THREE.DoubleSide;
-			  });
+			  plane.children[i].material.materials[0].side = THREE.DoubleSide;
+			
 			}
 			else {
 			  plane.children[i].material.side = THREE.DoubleSide;
@@ -327,9 +322,8 @@ function createPlane(){
 			for (let i = 0; i < scoller.children.length; i++) {
 		  		if (scoller.children[i].material) {
 					if (scoller.children[i].material.materials) {
-			  			scoller.children[i].material.materials.forEach((mat) => {
-						mat.side = THREE.DoubleSide;
-			  			});
+			  			scoller.children[i].material.materials[0].side = THREE.DoubleSide;
+			  			
 					}else {
 			 			 scoller.children[i].material.side = THREE.DoubleSide;
 					}
